@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Archival Process</title>
+    <link rel="stylesheet" href="../../public/pluginsv2/fontawesome-free/css/all.min.css"
+          th:href="@{/pluginsv2/fontawesome-free/css/all.min.css}">
+    <link rel="stylesheet" href="../../public/pluginsv2/icheck-bootstrap/icheck-bootstrap.min.css"
+          th:href="@{/pluginsv2/icheck-bootstrap/icheck-bootstrap.min.css}">
+    <link rel="stylesheet" href="../../public/cssv2/pblmin.min.css?v=3.2.0"
+          th:href="@{/cssv2/pblmin.min.css?v=3.2.0}">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <a href="/login" th:href="@{/login}" class="h1"><b style="font-size: 29px;">Test Process</b></a>
+        </div>
+        <div class="card-body">
+            <form id="loginForm" th:id="loginForm" action="/otp-page" th:action="@{/otp-page}" method="POST"
+                  th:object="${viewModel}">
+                <div class="input-group mb-3">
+                    <input type="text" id="userName" th:field="*{mobileNo}" class="form-control"
+                           placeholder="Mobile No">
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    </div>
+
+                </div>
+            </form>
+            <p class="mb-1">
+
+            </p>
+        </div>
+    </div>
+</div>
+
+<script src="../../public/pluginsv2/jquery/jquery.min.js"
+        th:src="@{/pluginsv2/jquery/jquery.min.js}"></script>
+
+<script src="../../public/pluginsv2/bootstrap/js/bootstrap.bundle.min.js"
+        th:src="@{/pluginsv2/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+<script src="../../public/jsv2/adminlte.min.js?v=3.2.0"
+        th:src="@{/jsv2/adminlte.min.js?v=3.2.0}"></script>
+</body>
+</html>

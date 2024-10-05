@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Archival Process</title>
+    <link rel="stylesheet" href="../../public/pluginsv2/fontawesome-free/css/all.min.css"
+          th:href="@{/pluginsv2/fontawesome-free/css/all.min.css}">
+    <link rel="stylesheet" href="../../public/pluginsv2/icheck-bootstrap/icheck-bootstrap.min.css"
+          th:href="@{/pluginsv2/icheck-bootstrap/icheck-bootstrap.min.css}">
+    <link rel="stylesheet" href="../../public/cssv2/pblmin.min.css?v=3.2.0"
+          th:href="@{/cssv2/pblmin.min.css?v=3.2.0}">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <a href="/login" th:href="@{/login}" class="h1"><b style="font-size: 29px;">Test Process</b></a>
+        </div>
+        <div class="card-body">
+            <form id="loginForm" th:id="loginForm" action="/login" th:action="@{/login}" method="POST">
+                <p class="login-box-msg error " th:if="${param.error}" th:with="errorMsg=${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"><span th:text="${errorMsg}"></span></p>
+
+                <p class="text-success text-center"
+                     th:class="${message}?'text-center text-success':'d-none'"
+                     th:text="${message}"></p>
+                <div class="input-group mb-3">
+                    <input type="text" id="userName" name="username" class="form-control" placeholder="User name">
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" id="password" th:id="password" name="password" class="form-control"
+                           placeholder="Password">
+                    <div class="input-group-append">
+                            <span class="input-group-text" id="showPasswordBtn">
+                                <i class="fa fa-eye" id="eyeIcon"></i>
+                            </span>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                    </div>
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    </div>
+
+                </div>
+            </form>
+            <p class="mb-1">
+
+            </p>
+            <p class="mb-0"><!--href="/register"-->
+                <a href="/registration" class="text-center">Register a new customer</a>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+<script>
+    var passwordInput = document.getElementById('password');
+    var showPasswordBtn = document.getElementById('showPasswordBtn');
+    var eyeIcon = document.getElementById('eyeIcon');
+
+    showPasswordBtn.addEventListener('click', function() {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            eyeIcon.className = 'fa fa-eye-slash';
+        } else {
+            passwordInput.type = 'password';
+            eyeIcon.className = 'fa fa-eye';
+        }
+    });
+</script>
+
+<script src="../../public/pluginsv2/jquery/jquery.min.js"
+        th:src="@{/pluginsv2/jquery/jquery.min.js}"></script>
+
+<script src="../../public/pluginsv2/bootstrap/js/bootstrap.bundle.min.js"
+        th:src="@{/pluginsv2/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+<script src="../../public/jsv2/adminlte.min.js?v=3.2.0"
+        th:src="@{/jsv2/adminlte.min.js?v=3.2.0}"></script>
+</body>
+</html>
